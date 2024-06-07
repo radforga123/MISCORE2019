@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<MISCORE2019.Models.Doctor>
+    @{
+        ViewData["Title"] = "Список докторов";
+        Layout = null;
+    }
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <title>Магазин смартфонов</title>
+    </head>
+    <body>
+        <h3>Доктора</h3>
+        <table>
+            <tr>
+                <td>ФИО</td>
+                <td>Специализаиця</td>
+                <td></td>
+            </tr>
+            @foreach (var doctor in Model)
+            {
+                <tr>
+                    <td>@doctor.FIO</td>
+                    <td>@doctor.specialization</td>
+                    <td><a href="">Записаться</a></td>
+                </tr>
+            }
+        </table>
+    </body>
+</html>
