@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MISCORE2019
 {
-    public class Program
+    public class Program //Запустилась сучка
     {
 
         public static void Main(string[] args)
@@ -39,6 +39,6 @@ namespace MISCORE2019
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }); 
     }
 }
