@@ -23,7 +23,7 @@ namespace MISCORE2019
                 try
                 {
                     var context = services.GetRequiredService<PatientContext>();
-                    SampleData.Initialize(context);
+                    DDBInit.Initialize(context);
                 }
                 catch (Exception ex)
                 {

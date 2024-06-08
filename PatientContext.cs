@@ -17,5 +17,18 @@ namespace MISCORE2019
         {
             Database.EnsureCreated();
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Visit>()
+                .HasOne(v => v.Patient)
+                .WithMany(p => p.visits)
+                .HasForeignKey(v => v.PatientID);
+
+            modelBuilder.Entity<Analyze>()
+                .HasOne(a => a.Patient)
+                .WithMany(p => p.analyzes)
+                .HasForeignKey(a => a.PatientID);
+        }
+
     }
 }

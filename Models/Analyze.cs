@@ -10,5 +10,7 @@ namespace MISCORE2019.Models
         public int ID { get; set; }
         public int bloodGroup { get; set; }
         public String epileptiphoricActivity { get; set; }
+        public int PatientID { get; set; }
+        public Patient Patient { get; set; }
     }
 }
