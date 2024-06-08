@@ -1,26 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MISCORE2019.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+using MISCORE2019.Models;
 
-namespace MISCORE2019.Controllers
+namespace WebMIS.Controllers
 {
     public class HomeController : Controller
     {
-        PatientContext db;
-        public HomeController(PatientContext context)
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
         {
-            db = context;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View(db.Doctors.ToList() );
+            return View();
         }
 
         public IActionResult Privacy()
@@ -33,67 +33,5 @@ namespace MISCORE2019.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        [HttpGet]
-        public IActionResult GetDoctor(int? id)
-        {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.DoctorID = id;
-            return View();
-        }
-        [HttpPost]
-        public void PostDoctor(Doctor doctor)
-        {
-            db.Doctors.Add(doctor);
-
-            db.SaveChanges();
-
-        }
-        [HttpGet]
-        public IActionResult GetPatient(int? id)
-        {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.PatientID = id;
-            return View();
-        }
-        [HttpPost]
-        public void PostPatient(PatientClass patient)
-        {
-            db.Patients.Add(patient);
-
-            db.SaveChanges();
-
-        }
-        [HttpGet]
-        public IActionResult GetAnalyze(int? id)
-        {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.AnalyzeID = id;
-            return View();
-        }
-        [HttpPost]
-        public void PostAnalyze(Analyze analyze)
-        {
-            db.Analyzes.Add(analyze);
-
-            db.SaveChanges();
-
-        }
-        [HttpGet]
-        public IActionResult GetVisit(int? id)
-        {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.AnalyzeID = id;
-            return View();
-        }
-        [HttpPost]
-        public void PostVisit(Visit visit)
-        {
-            db.Visits.Add(visit);
-
-            db.SaveChanges();
-
-        }
     }
-
-   
 }

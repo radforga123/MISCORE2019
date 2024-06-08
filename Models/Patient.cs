@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MISCORE2019.Models
 {
-    public class PatientClass
+    public class Patient
     {
         public int ID { get; set; }
         public String FIO { get; set; }
