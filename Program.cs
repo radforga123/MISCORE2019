@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MISCORE2019
 {
-    public class Program //Запустилась сучка
+    public class Program 
     {
 
         public static void Main(string[] args)
