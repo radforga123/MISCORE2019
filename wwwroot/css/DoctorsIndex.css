@@ -31,7 +31,7 @@ th {
     font-family: 'Montserrat', sans-serif; 
     padding: 2%;
     text-align: left;
-    border-bottom: 1px solid #E1F5FE; 
+    border-bottom: 0px solid #E1F5FE; 
 }
 
 tr {
@@ -59,9 +59,9 @@ tr:hover {
 }
 
 td {
-    padding: 1%;
-    font-family: 'Roboto', sans-serif; 
-    border-bottom: 0px solid #E1F5FE; 
+    padding: 1.5%;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 0px solid #E1F5FE;
 }
 
 a{

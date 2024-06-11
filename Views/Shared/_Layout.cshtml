@@ -24,17 +24,17 @@
     <header class="layout">
         <nav>
             <ul>
-                <li><a href="@Url.Action("Index", "Doctors")">Доктор</a></li>
-                <li><a href="@Url.Action("Index", "Analyzes")">Анализ</a></li>
-                <li><a href="@Url.Action("Index", "Visits")">Посищен</a></li>
-                <li><a href="@Url.Action("Index", "Patients")">Пациенты/a></li>
+                <li><a class="a-layout" href="@Url.Action("Index", "Doctors")">Доктор</a></li>
+                <li><a class="a-layout" href="@Url.Action("Index", "Analyzes")">Анализ</a></li>
+                <li><a class="a-layout" href="@Url.Action("Index", "Visits")">Посищен</a></li>
+                <li><a class="a-layout" href="@Url.Action("Index", "Patients")">Пациенты</li>
                 <li class="account-menu">
                     <a href="javascript:void(0);" class="account-icon">
                         <img src="~/account.png" alt="Account Icon" />
                     </a>
                     <div class="account-dropdown">
-                        <a href="@Url.Action("Register", "Account")">Register</a>
-                        <a href="@Url.Action("Login", "Account")">Login</a>
+                        <a href="@Url.Action("Register", "Account")">Зарегистрироваться</a>
+                        <a href="@Url.Action("Login", "Account")">Войти</a>
                     </div>
                 </li>
             </ul>
