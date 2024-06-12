@@ -3,13 +3,14 @@
 @{
     ViewData["Title"] = "Index";
     ViewBag.Title = "Doctors";
-    // Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <head>
     <link type="text/css" href="~/css/DoctorsIndex.css" rel="stylesheet" />
 </head>
-<div class="div-create">
+
+
+<div class="div-create"> 
     <button class="create">
         <a asp-action="Create" class="a-create">Добавить врача</a>
     </button>
@@ -39,7 +40,6 @@
                     <td align="center">
                         <a asp-action="Delete" asp-route-id="@item.ID"><img src="~/delete.svg" alt="delete"/></a>
                     </td>
-
                 </tr>
             }
         </tbody>

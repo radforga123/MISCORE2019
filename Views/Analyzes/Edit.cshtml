@@ -2,30 +2,31 @@
 
 @{ ViewData["Title"] = "Edit"; }
 
-<h1>Edit</h1>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/AnalyzecEdit.css" />
+</head>
 
-<h4>Analyze</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="basic-div">
+    <div class="edit-div">
         <form asp-action="Edit">
-            <div class="form-group">
-                <label asp-for="bloodGroup" class="control-label"></label>
-                <input asp-for="bloodGroup" class="form-control" />
+            <div>
+                <label asp-for="bloodGroup" class="bloodGroup-label"></label>
+                <input asp-for="bloodGroup" class="bloodGroup-control" />
                 <span asp-validation-for="bloodGroup" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="epileptiphoricActivity" class="control-label"></label>
-                <input asp-for="epileptiphoricActivity" class="form-control" />
+            <div>
+                <label asp-for="epileptiphoricActivity" class="epActivity-label"></label>
+                <input asp-for="epileptiphoricActivity" class="epActivity-control" />
                 <span asp-validation-for="epileptiphoricActivity" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class="div-buttons">
+                <button asp-action="Edit" class="save-button">
+                    <a>Сохранить</a>
+                </button>
+                <button asp-action="Index" class="back-button">
+                    <a>Вернуться</a>
+                </button>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>

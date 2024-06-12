@@ -26,19 +26,19 @@
 label {
     display: block;
     margin-bottom: 8px;
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     color: #333333;
 }
 
-input[type="text"] {
+input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #BBDEFB; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    font-family: 'Roboto', sans-serif; 
+    border: 2px solid #BBDEFB;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 

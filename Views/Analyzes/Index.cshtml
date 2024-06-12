@@ -2,31 +2,40 @@
 
 @{ ViewData["Title"] = "Index"; }
 
-<h1>Index</h1>
+<head>
+    <link type="text/css" href="~/css/AnalyzecIndex.css" rel="stylesheet" />
+</head>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Blood Group</th>
-            <th>Epileptiphoric Activity</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-<tr>
-    <td>@Html.DisplayFor(modelItem => item.ID)</td>
-    <td>@Html.DisplayFor(modelItem => item.bloodGroup)</td>
-    <td>@Html.DisplayFor(modelItem => item.epileptiphoricActivity)</td>
-    <td>
-        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-    </td>
-</tr>}
-    </tbody>
-</table>
+<div class="div-create">
+    <button class="create">
+        <a asp-action="Create" class="a-create">Добавить анализ</a>
+    </button>
+</div>
+
+<div class="div-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Группа крови</th>
+                <th>Эпилептическая активность</th>
+                <th>Удаление</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.bloodGroup)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.epileptiphoricActivity)</a>
+                    </td>
+                    <td align="center">
+                        <a asp-action="Delete" asp-route-id="@item.ID"><img src="~/delete.svg" alt="delete"/></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

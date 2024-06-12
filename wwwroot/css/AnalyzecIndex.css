@@ -4,7 +4,7 @@
 }
 
 .div-table {
-    width: 80%;
+    width: 55%;
     padding: 2%;
     margin-left: auto;
     margin-right: auto;
@@ -14,48 +14,45 @@ table {
     font-size: 24px;
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Roboto', sans-serif; 
-    border-radius: 8px; 
-    overflow: hidden; 
-    border: 0px solid #BBDEFB; 
-
-    border-spacing: 0; 
-    border-collapse: separate; 
-
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0px solid #BBDEFB;
+    border-spacing: 0;
+    border-collapse: separate;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-
 th {
-    background-color: #BBDEFB; 
-    font-family: 'Montserrat', sans-serif; 
+    background-color: #BBDEFB;
+    font-family: 'Montserrat', sans-serif;
     padding: 2%;
     text-align: left;
-    border-bottom: 0px solid #E1F5FE; 
+    border-bottom: 0px solid #E1F5FE;
 }
 
 tr {
     transition: background-color 100ms ease;
 }
 
-th:first-child{
-    width: 65%;
+th:first-child {
+    width: 30%;
 }
 
-th:last-child{
+th:last-child {
     width: auto;
 }
 
 tr:nth-child(even) {
-    background-color: #E3F2FD; 
+    background-color: #E3F2FD;
 }
 
 tr:nth-child(odd) {
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
 }
 
 tr:hover {
-    background-color: #B3E5FC; 
+    background-color: #B3E5FC;
 }
 
 td {
@@ -64,21 +61,18 @@ td {
     border-bottom: 0px solid #E1F5FE;
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
 
-.create{
+.create {
     margin-top: 2%;
     padding: 20px 25px 20px 25px;
     background-color: #64B5F6;
-
     border: none;
     border-radius: 10px;
-
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-
     transition: background-color 200ms ease;
 }
 
@@ -89,12 +83,12 @@ a{
 }
 
 .create:hover {
-    background-color: #42A5F5; 
+    background-color: #42A5F5;
 }
 
 .create:active {
-    background-color: #1E88E5; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    background-color: #1E88E5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .a-create {
