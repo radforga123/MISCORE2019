@@ -2,44 +2,44 @@
 
 @{ ViewData["Title"] = "Index"; }
 
-<h1>Index</h1>
+<head>
+    <link type="text/css" href="~/css/VisitsIndex.css" rel="stylesheet" />
+</head>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.time)
-            </th>
-            <th>
-                Doctors
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.ID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.time)
-    </td>
-    <td>
-        @string.Join(", ", item.doctors.Select(d => d.FIO))
-    </td>
-    <td>
-        <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-        <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-        <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-    </td>
-</tr>}
-    </tbody>
-</table>
+<div class="div-create">
+    <button class="create">
+        <a class="a-create" asp-action="Create">Добавить посещение</a>
+    </button>
+</div>
+
+<div class="div-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Врач</th>
+                <th>Удаление</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.time.Day).@Html.DisplayFor(modelItem => item.time.Month).@Html.DisplayFor(modelItem => item.time.Year)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.time.Hour):@Html.DisplayFor(modelItem => item.time.Minute)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@string.Join(", ", item.doctors.Select(d => d.FIO))</a>
+                    </td>
+                    <td align="center">
+                        <a asp-action="Delete" asp-route-id="@item.ID"><img src="~/delete.svg" alt="delete" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

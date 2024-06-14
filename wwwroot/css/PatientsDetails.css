@@ -1,0 +1,72 @@
+﻿body {
+    margin: 0;
+    background-color: #EAF4FB;
+}
+
+.basic-div {
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.details-div {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 0px solid;
+    border-radius: 8px;
+    width: min(50%, 500px);
+    max-width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.div-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    width: 40%;
+    padding: 2%;
+    border: 0px solid;
+    border-radius: 6px;
+    background-color: #64B5F6;
+    transition: background-color 100ms ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #42A5F5;
+    }
+
+    button:active {
+        background-color: #1E88E5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+a {
+    text-decoration: none;
+    color: black;
+    color: #FFFFFF;
+}
+
+.info-div {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333333;
+    align-items: center;
+}
+
+.visits-div, .analyzec-div, .FIO-div {
+    text-align: center;
+    padding: 2%;
+    font-size: 20px;
+}
