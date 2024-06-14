@@ -8,6 +8,7 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\DoctorsEdit.css" />
     <_ContentIncludedByDefault Remove="wwwroot\css\Layout.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\VisitsIndex.css" />
   </ItemGroup>
 
   <ItemGroup>

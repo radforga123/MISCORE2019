@@ -11,6 +11,9 @@
         <form asp-action="Delete">
             <div class="info-div">
                 <div class="weight-div">
+                    <n>ID пациента: @Html.DisplayFor(model => model.PatientID)</n>
+                </div>
+                <div class="weight-div">
                     <n>@(Html.DisplayNameFor(model => model.weight)): @Html.DisplayFor(model => model.weight)</n>                  
                 </div>
                 <div class="diagnosis-div">
