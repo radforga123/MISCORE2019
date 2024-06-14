@@ -9,6 +9,7 @@ namespace MISCORE2019.Models
     {
         public int ID { get; set; }
         public String FIO { get; set; }
+
         public List<Visit> visits { get; set; }
         public List<Analyze> analyzes { get; set; }
     }

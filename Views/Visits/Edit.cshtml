@@ -18,13 +18,13 @@
                 <label asp-for="doctors" class="spec-label">Доктор</label>
                 <select asp-for="doctors" asp-items="ViewBag.Doctors" multiple="multiple"></select>
             </div>
-            <div class="div-buttons">
-                <button asp-action="Edit">
-                    <a>Сохранить</a>
-                </button>
-                <button asp-action="Index">
-                    <a>Вернуться</a>
-                </button>
+            <div class="form-group">
+                <label asp-for="PatientID" class="control-label"></label>
+                <input asp-for="PatientID" class="form-control" />
+                <span asp-validation-for="PatientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
