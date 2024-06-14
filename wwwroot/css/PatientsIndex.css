@@ -36,6 +36,10 @@ tr {
     transition: background-color 100ms ease;
 }
 
+th:first-child{
+    width: 10%;
+}
+
 th:last-child {
     width: auto;
     text-align: center;

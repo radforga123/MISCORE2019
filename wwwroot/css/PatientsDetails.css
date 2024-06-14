@@ -65,8 +65,9 @@ a {
     align-items: center;
 }
 
-.visits-div, .analyzec-div, .FIO-div {
+.visits-div, .fio-div, .id-div, .diagnosis-div {
     text-align: center;
+    align-items: center;
     padding: 2%;
     font-size: 20px;
 }

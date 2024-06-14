@@ -16,8 +16,9 @@
     <table>
         <thead>
             <tr>
-                <th>Группа крови</th>
-                <th>Эпилептическая активность</th>
+                <th>ID</th>
+                <th>Вес</th>
+                <th>Диагноз</th>
                 <th>Удаление</th>
             </tr>
         </thead>
@@ -25,6 +26,9 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.PatientID)</a>
+                    </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.weight)</a>
                     </td>

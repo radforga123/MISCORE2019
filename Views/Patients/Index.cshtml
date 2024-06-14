@@ -6,34 +6,44 @@
     <link type="text/css" href="~/css/PatientsIndex.css" rel="stylesheet" />
 </head>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.ID)</th>
-            <th>@Html.DisplayNameFor(model => model.FIO)</th>
-            <td>@Html.DisplayNameFor(model => model.BurthDate)</td>
-            <th>Visits</th>
-            <th>Analyzes</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.ID)</td>
-            <td>@Html.DisplayFor(modelItem => item.FIO)</td>
-            <td>@Html.DisplayFor(modelItem => item.BurthDate)</td>
-            <td>@item.visits?.Count</td>
-            <td>@item.analyzes?.Count</td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>}
-    </tbody>
-</table>
+<div class="div-create">
+    <button class="create">
+        <a asp-action="Create" class="a-create">Добавить пациента</a>
+    </button>
+</div>
+
+<div class="div-table">
+    <table>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ID)</th>
+                <th>@Html.DisplayNameFor(model => model.FIO)</th>
+                <th class="th-center">@Html.DisplayNameFor(model => model.visits)</th>
+                <th class="th-center">@Html.DisplayNameFor(model => model.analyzes)</th>
+                <th class="th-center">Детали</th>
+                <th class="th-center">Удаление</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.ID)</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.FIO)</a>
+                    </td>
+                    <td align="center">@item.visits?.Count</td>
+                    <td align="center">@item.analyzes?.Count</td>
+                    <td align="center">
+                        <a asp-action="Details" asp-route-id="@item.ID"><img src="~/details.svg" alt="details" /></a>
+                    </td>
+                    <td align="center">
+                        <a asp-action="Delete" asp-route-id="@item.ID"><img src="~/delete.svg" alt="delete" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
