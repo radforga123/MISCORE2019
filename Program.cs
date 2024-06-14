@@ -12,8 +12,8 @@ namespace MISCORE2019
 {
     public class Program 
     {
-
-        public static void Main(string[] args)
+        
+        public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
             using (var scope = CreateHostBuilder(args).Build().Services.CreateScope())
@@ -23,7 +23,10 @@ namespace MISCORE2019
                 try
                 {
                     var context = services.GetRequiredService<PatientContext>();
-                    DDBInit.Initialize(context);
+                    DataImporter di = new DataImporter(context);
+                    await di.ImportDataAsync("B:/C#PRJ/Rep/Data/Exel/PTList.xlsx", "B:/C#PRJ/Rep/Data/Exel/PTVisitList.xlsx");
+                    
+
                 }
                 catch (Exception ex)
                 {
