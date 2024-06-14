@@ -12,33 +12,25 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.edit-div {
+.create-div {
     background-color: #FFFFFF;
     padding: 30px;
     border: 0px solid;
     border-radius: 8px;
-    min-width: min(50%, 500px);
+    width: min(50%, 500px);
     max-width: 90%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 20px;
-    color: #333333;
-}
-
-input[type="text"] {
+input{
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #BBDEFB; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    font-family: 'Roboto', sans-serif; 
+    border: 2px solid #BBDEFB;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
 

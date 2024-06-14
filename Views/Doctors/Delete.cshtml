@@ -6,30 +6,26 @@
     <link type="text/css" href="~/css/DoctorsDelete.css" rel="stylesheet" />
 </head>
 
-<div>
-    <div class="basic-div">
-        <div class="delete-div">
-            <form asp-action="Delete">
-                <div class="info-div">
-                    <div class="fio-div">
-                        <div>@Html.DisplayFor(model => model.FIO)</div>
-                    </div>
-                    <div class="spec-div">
-                        <div>@Html.DisplayFor(model => model.specialization)</div>
-                    </div>
+<div class="basic-div">
+    <div class="delete-div">
+        <form asp-action="Delete">
+            <div class="info-div">
+                <div class="fio-div">
+                    <div>@Html.DisplayFor(model => model.FIO)</div>
                 </div>
-                        
-                <div class="div-buttons">
-                    <button type="submit">
-                        <a>Удалить</a>
-                    </button>
-                    <button>
-                        <a asp-action="Index">Вернуться</a>
-                    </button>
-                </div>               
-            </form>
-        </div>
-    </div>
+                <div class="spec-div">
+                    <div>@Html.DisplayFor(model => model.specialization)</div>
+                </div>
+            </div>
 
-    
+            <div class="div-buttons">
+                <button asp-action="Delete">
+                    <a>Удалить</a>
+                </button>
+                <button asp-action="Index">
+                    <a>Вернуться</a>
+                </button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -9,6 +9,7 @@ namespace MISCORE2019.Models
     public class Doctor
     {
         public int ID { get; set; }
+
         [Display(Name = "ФИО")]
         public String FIO { get; set; }
 

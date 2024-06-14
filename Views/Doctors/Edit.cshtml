@@ -20,11 +20,11 @@
                 <span asp-validation-for="specialization" class="text-danger"></span>
             </div>
             <div class="div-buttons">
-                <button type="submit" class="save-button">
+                <button asp-action="Edit" class="save-button">
                     <a>Сохранить</a>
                 </button>
-                <button class="back-button">
-                    <a asp-action="Index">Вернуться</a>
+                <button asp-action="Index" class="back-button">
+                    <a>Вернуться</a>
                 </button>
             </div>
         </form>
