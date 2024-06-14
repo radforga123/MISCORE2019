@@ -31,7 +31,7 @@ namespace MISCORE2019.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,bloodGroup,epileptiphoricActivity")] Analyze analyze)
+        public async Task<IActionResult> Create([Bind("ID,weight,diagnos,PatientID")] Analyze analyze)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace MISCORE2019.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,bloodGroup,epileptiphoricActivity")] Analyze analyze)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,weight,diagnos,PatientID")] Analyze analyze)
         {
             if (id != analyze.ID)
             {

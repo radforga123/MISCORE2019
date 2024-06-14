@@ -52,19 +52,7 @@ namespace MISCORE2019.Controllers
             return View();
         }
 
-        // POST: Visits/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Time,Doctors")] Visit visit)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(visit);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(visit);
-        }
+
 
         // GET: Visits/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -88,7 +76,7 @@ namespace MISCORE2019.Controllers
         // POST: Visits/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Time,Doctors")] Visit visit, int[] selectedDoctors)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Time,Doctors,PatientID")] Visit visit, int[] selectedDoctors)
         {
             if (id != visit.ID)
             {
@@ -139,7 +127,7 @@ namespace MISCORE2019.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Time,Doctors")] Visit visit, int[] selectedDoctors)
+        public async Task<IActionResult> Create([Bind("ID,Time,Doctors,PatientID")] Visit visit, int[] selectedDoctors)
         {
             if (ModelState.IsValid)
             {

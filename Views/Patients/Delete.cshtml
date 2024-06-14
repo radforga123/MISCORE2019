@@ -31,7 +31,7 @@
             Analyzes
         </dt>
         <dd class="col-sm-10">
-            @string.Join(", ", Model.analyzes?.Select(a => $"Blood Group: {a.bloodGroup}, Epileptic Activity: {a.epileptiphoricActivity}") ?? Enumerable.Empty<string>())
+            @string.Join(", ", Model.analyzes?.Select(a => $"Blood Group: {a.weight}, Epileptic Activity: {a.diagnos}") ?? Enumerable.Empty<string>())
         </dd>
     </dl>
 

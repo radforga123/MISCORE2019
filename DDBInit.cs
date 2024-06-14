@@ -54,8 +54,8 @@ namespace MISCORE2019
 
             var analyzes = new Analyze[]
             {
-                new Analyze{bloodGroup=1, epileptiphoricActivity="None", PatientID=patients[0].ID},
-                new Analyze{bloodGroup=2, epileptiphoricActivity="High", PatientID=patients[1].ID}
+                new Analyze{weight=1, diagnos="None", PatientID=patients[0].ID},
+                new Analyze{weight=2, diagnos="High", PatientID=patients[1].ID}
             };
 
             foreach (Analyze a in analyzes)

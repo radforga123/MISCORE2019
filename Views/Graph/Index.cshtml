@@ -1,0 +1,23 @@
+﻿@page
+@model MISCORE2019.Controllers.GraphController
+
+
+
+<h1>Patient Graph</h1>
+
+<form method="post" asp-action="GenerateGraph">
+    <label for="patientNumber">Patient Number:</label>
+    <input type="text" id="patientNumber" name="patientNumber" required />
+    <button type="submit">Generate Graph</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}
+
+@if (ViewBag.ImageData != null)
+{
+    <h2>Graph</h2>
+    <img src="@ViewBag.ImageData" alt="Patient Graph" />
+}

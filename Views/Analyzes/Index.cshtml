@@ -11,8 +11,8 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Blood Group</th>
-            <th>Epileptiphoric Activity</th>
+            <th>Вес</th>
+            <th>Диагноз</th>
             <th></th>
         </tr>
     </thead>
@@ -21,8 +21,8 @@
         {
 <tr>
     <td>@Html.DisplayFor(modelItem => item.ID)</td>
-    <td>@Html.DisplayFor(modelItem => item.bloodGroup)</td>
-    <td>@Html.DisplayFor(modelItem => item.epileptiphoricActivity)</td>
+    <td>@Html.DisplayFor(modelItem => item.weight)</td>
+    <td>@Html.DisplayFor(modelItem => item.diagnos)</td>
     <td>
         <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
         <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
