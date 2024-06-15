@@ -23,6 +23,7 @@ namespace MISCORE2019
                 try
                 {
                     var context = services.GetRequiredService<PatientContext>();
+                    DDBInit.Initialize(context);
                     DataImporter di = new DataImporter(context);
                     await di.ImportDataAsync("B:/C#PRJ/Rep/Data/Exel/PTList.xlsx", "B:/C#PRJ/Rep/Data/Exel/PTVisitList.xlsx");
                     

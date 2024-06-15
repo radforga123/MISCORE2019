@@ -1,0 +1,1 @@
+﻿DBCC CHECKIDENT('Patients', RESEED, 0)

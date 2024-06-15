@@ -24,6 +24,10 @@ namespace MISCORE2019
         
         public async Task ImportDataAsync(string patientDataFilePath, string visitDataFilePath)
         {
+            if (_context.Patients.Any())
+            {
+                return;
+            }
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             var fileInfo = new FileInfo(patientDataFilePath);
             var patients = new List<Patient>();
@@ -38,7 +42,7 @@ namespace MISCORE2019
                     var worksheet = package.Workbook.Worksheets.FirstOrDefault();
                     var rowCount = worksheet.Dimension.Rows;
 
-                    for (int row = 2; rowCount > 0 && row <= rowCount; row++)
+                    for (int row = 2; rowCount > 0 && row < 75; row++)
                     {
                         var patientID = ConvertSpecialID(worksheet.Cells[row, 1].Text);
                         var patientName = worksheet.Cells[row, 2].Text;
@@ -63,7 +67,7 @@ namespace MISCORE2019
                     var worksheet = package.Workbook.Worksheets.FirstOrDefault();
                     var rowCount = worksheet.Dimension.Rows;
 
-                    for (int row = 2; rowCount > 0 && row <= rowCount; row++)
+                    for (int row = 2; rowCount > 0 && row < 250; row++)
                     {
                         int ID = ConvertSpecialID(worksheet.Cells[row, 1].Text);
                         var date = DateTime.ParseExact(worksheet.Cells[row, 2].Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
@@ -72,7 +76,7 @@ namespace MISCORE2019
                         var patient = patients.FirstOrDefault(p => p.ID == ID);
 
 
-                        var visit = new Visit {PatientID = ID, time = dateTime, Patient = patient };
+                        var visit = new Visit {PatientID = ID, time = dateTime};
                         visits.Add(visit);
                     }
                 }
