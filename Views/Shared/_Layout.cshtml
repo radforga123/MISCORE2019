@@ -34,8 +34,19 @@
                         <img src="~/account.png" alt="Account Icon" />
                     </a>
                     <div class="account-dropdown">
-                        <a href="@Url.Action("Register", "Account")">Зарегистрироваться</a>
-                        <a href="@Url.Action("Login", "Account")">Войти</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p>@User.Identity.Name</p>
+
+                            <form method="post" asp-controller="Account" asp-action="Logout">
+                                <input type="submit" value="Выход" />
+                            </form>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login">Вход</a>
+                            <a asp-controller="Account" asp-action="Register">Регистрация</a>
+                        }
                     </div>
                 </li>
             </ul>

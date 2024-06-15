@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MISCORE2019;
 using MISCORE2019.Models;
-
+using Microsoft.AspNetCore.Authorization;
 namespace MISCORE2019.Controllers
 {
     public class VisitsController : Controller
@@ -43,7 +43,7 @@ namespace MISCORE2019.Controllers
 
             return View(visit);
         }
-
+        [Authorize(Roles = "doctor,admin")]
         // GET: Visits/Create
         public IActionResult Create()
         {
@@ -52,7 +52,7 @@ namespace MISCORE2019.Controllers
             return View();
         }
 
-
+        [Authorize(Roles = "doctor,admin")]
 
         // GET: Visits/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -149,7 +149,7 @@ namespace MISCORE2019.Controllers
             PopulateDoctorsDropDownList(selectedDoctors.ToList());
             return View(visit);
         }
-
+        [Authorize(Roles = "doctor,admin")]
         // GET: Visits/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

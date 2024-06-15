@@ -9,7 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MISCORE2019.Models;
+using Microsoft.AspNetCore.Identity;
 namespace MISCORE2019
 {
     public class Startup
@@ -27,6 +28,11 @@ namespace MISCORE2019
             services.AddControllersWithViews();
             String connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<PatientContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<UserContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("UserConnection")));
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<UserContext>();
             services.AddControllersWithViews();
         }
 
@@ -48,6 +54,7 @@ namespace MISCORE2019
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -56,6 +63,7 @@ namespace MISCORE2019
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
