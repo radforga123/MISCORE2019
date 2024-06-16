@@ -40,6 +40,7 @@ header nav ul li a {
 }
 
 .account-dropdown {
+    padding: 6px;
     display: none;
     position: absolute;
     right: 0;
@@ -47,6 +48,9 @@ header nav ul li a {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
     text-align: right;
+
+    border: 0px solid;
+    border-radius: 6px;
 }
 
     .account-dropdown a {
@@ -59,3 +63,14 @@ header nav ul li a {
         .account-dropdown a:hover {
             background-color: #f1f1f1;
         }
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+p {
+    margin: 10px;
+}

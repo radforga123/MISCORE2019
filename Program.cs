@@ -27,7 +27,7 @@ namespace MISCORE2019
                     var context = services.GetRequiredService<PatientContext>();
                     DDBInit.Initialize(context);
                     DataImporter di = new DataImporter(context);
-                    await di.ImportDataAsync("B:/C#PRJ/Rep/Data/Exel/PTList.xlsx", "B:/C#PRJ/Rep/Data/Exel/PTVisitList.xlsx");
+                    await di.ImportDataAsync("C:\\Users\\User\\source\\repos\\MISCORE2019\\Data\\Exel\\PTList.xlsx", "C:\\Users\\User\\source\\repos\\MISCORE2019\\Data\\Exel\\PTVisitList.xlsx");
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await RoleInitalizer.InitializeAsync(userManager, rolesManager);

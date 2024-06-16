@@ -1,4 +1,20 @@
 ﻿@model MISCORE2019.Models.LoginModel
 
-<h2>У вас нет доступа</h2>
-<li><a class="a-layout" href="@Url.Action("Index", "Home")">Вернуться</a></li>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/AccesDenied.css" />
+</head>
+
+<body>
+    <div class="basic-div"> 
+        <div class="access-denied-div">
+            <n>У вас нет доступа!</n>
+            <form action="@Url.Action("Index", "Home")">
+                <div class="div-buttons">
+                    <button>
+                        <a>Вернуться</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

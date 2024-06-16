@@ -4,7 +4,7 @@
 }
 
 .basic-div {
-    height: 70vh;
+    height: 90vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -12,24 +12,60 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.details-div {
+.graph-div {
     background-color: #FFFFFF;
     padding: 30px;
     border: 0px solid;
     border-radius: 8px;
-    width: min(50%, 500px);
+    width: min(50%, 650px);
     max-width: 90%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 
+.graph {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 35%;
+    padding: 8px;
+    margin-bottom: 2%;
+    border: 2px solid #BBDEFB;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .div-buttons {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    margin-bottom: 2%;
 }
 
 button {
+    margin-top: 2%;
+
     cursor: pointer;
     font-size: 16px;
     width: 40%;
@@ -53,21 +89,9 @@ button {
 
 a {
     text-decoration: none;
-    color: black;
-    color: #FFFFFF;
+    color: white;
 }
 
-.info-div {
-    display: block;
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #333333;
-    align-items: center;
-}
-
-.visits-div, .fio-div, .id-div, .weight-div, .diagnosis-div {
-    text-align: center;
-    align-items: center;
-    padding: 2%;
-    font-size: 20px;
+.h2-graph {
+    margin: 3% 0;
 }

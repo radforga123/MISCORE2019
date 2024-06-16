@@ -1,23 +1,34 @@
 ﻿@page
 @model MISCORE2019.Controllers.GraphController
 
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Graph.css" />
+</head>
 
+<body>
+    <div class="basic-div">
+        <div class="graph-div">
+            <form method="post" asp-action="GenerateGraph">
+                <input placeholder="ID пациента" type="text" id="patientNumber" name="patientNumber" required />
+                <div class="div-buttons">
+                    <button type="submit">
+                        <a>Сгенерировать</a>
+                    </button>
+                </div>              
+            </form>
 
-<h1>Patient Graph</h1>
+            @if (ViewBag.Error != null)
+            {
+                <p style="color: red;">@ViewBag.Error</p>
+            }
 
-<form method="post" asp-action="GenerateGraph">
-    <label for="patientNumber">Patient Number:</label>
-    <input type="text" id="patientNumber" name="patientNumber" required />
-    <button type="submit">Generate Graph</button>
-</form>
-
-@if (ViewBag.Error != null)
-{
-    <p style="color: red;">@ViewBag.Error</p>
-}
-
-@if (ViewBag.ImageData != null)
-{
-    <h2>Graph</h2>
-    <img src="@ViewBag.ImageData" alt="Patient Graph" />
-}
+            <div class="graph">
+                @if (ViewBag.ImageData != null)
+                {
+                    <h2 class="h2-graph">График</h2>
+                    <img src="@ViewBag.ImageData" alt="Patient Graph" />
+                }
+            </div>
+        </div>        
+    </div>
+</body>
