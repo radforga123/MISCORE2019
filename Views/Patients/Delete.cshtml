@@ -19,8 +19,11 @@
                 <div class="visits-div">
                     Посещение: @string.Join(", ", Model.visits?.Select(v => v.time.ToString("g")) ?? Enumerable.Empty<string>())
                 </div>
+                <div class="weight-div">
+                    @string.Join(", ", Model.analyzes?.Select(a => $"Вес: {a.weight}") ?? Enumerable.Empty<string>())
+                </div>
                 <div class="diagnosis-div">
-                    Диагноз: @string.Join(", ", Model.analyzes?.Select(a => $"Вес: {a.weight}, Диагноз: {a.diagnos}") ?? Enumerable.Empty<string>())
+                    @string.Join(", ", Model.analyzes?.Select(a => $"Диагноз: {a.diagnos}") ?? Enumerable.Empty<string>())
                 </div>
             </div>
             <div class="div-buttons">

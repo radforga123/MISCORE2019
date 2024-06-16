@@ -2,34 +2,35 @@
 
 @{ ViewData["Title"] = "Create"; }
 
-<h1>Create</h1>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/VisitsCreate.css" />
+</head>
 
-<h4>Visit</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="basic-div">
+    <div class="create-div">
         <form asp-action="Create">
-            <div class="form-group">
+            <div>
                 <label asp-for="time" class="control-label"></label>
-                <input asp-for="time" class="form-control" />
+                <input type="datetime-local" asp-for="time"/>
                 <span asp-validation-for="time" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <label>Doctors</label>
                 <select asp-for="doctors" class="form-control" asp-items="ViewBag.Doctors" multiple="multiple"></select>
             </div>
-            <div class="form-group">
+            <div >
                 <label asp-for="PatientID" class="control-label"></label>
                 <input asp-for="PatientID" class="form-control" />
                 <span asp-validation-for="PatientID" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="div-buttons">
+                <button asp-action="Create">
+                    <a>Сохранить</a>
+                </button>
+                <button asp-action="Index">
+                    <a>Вернуться</a>
+                </button>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>

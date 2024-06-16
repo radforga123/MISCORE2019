@@ -1,37 +1,44 @@
 ﻿@model MISCORE2019.Models.RegisterModel
-<h2>Регистрация нового пользователя</h2>
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label asp-for="Year"></label><br />
-        <input asp-for="Year" />
-        <span asp-validation-for="Year"></span>
-    </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
-        <span asp-validation-for="PasswordConfirm"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Role"></label>
-        <select asp-for="Role" class="form-control">
-            <option value="patient">Patient</option>
-            <option value="doctor">Doctor</option>
-            <option value="admin">Admin</option>
-        </select>
-        <span asp-validation-for="Role" class="text-danger"></span>
-    </div>
-    <div>
-        <input type="submit" value="Регистрация" />
-    </div>
-</form>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Register.css" />
+</head>
+
+
+<body>
+    <div class="basic-div">
+        <div class="registration-div">
+            <a class="a-registration">Регистрация</a>
+            <form method="post" asp-controller="Account" asp-action="Register" class="registration-form">
+
+                <div asp-validation-summary="ModelOnly"></div>
+
+                <input type="email" asp-for="Email" placeholder="Email" required />
+                <span asp-validation-for="Email"></span>
+
+                <input type="number" asp-for="Year" placeholder="Дата рождения" required />
+                <span asp-validation-for="Year"></span>
+
+                <input type="password" asp-for="Password" placeholder="Пароль" required />
+                <span asp-validation-for="Password"></span>
+
+                <input type="password" asp-for="PasswordConfirm" placeholder="Подтвердите пароль" required />
+                <span asp-validation-for="PasswordConfirm"></span>
+                <div class="select-container">
+                    <label asp-for="Role">Войти как: </label>
+                    <select asp-for="Role" class="form-control" required>
+                        <option value="patient">Пациент</option>
+                        <option value="doctor">Доктор</option>
+                        <option value="admin">Админ</option>
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+                <div class="div-buttons">
+                    <button type="submit">
+                        <a>Зарегистрироваться</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>  
+</body>

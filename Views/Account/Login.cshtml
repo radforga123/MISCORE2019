@@ -1,24 +1,34 @@
 ﻿@model MISCORE2019.Models.LoginModel
 
-<h2>Вход в приложение</h2>
-<form method="post" asp-controller="Account" asp-action="Login"
-      asp-route-returnUrl="@Model.ReturnUrl">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/Login.css" />
+</head>
+
+<div class="basic-div">
+    <div class="login-div">
+        <a class="a-login">Вход</a>
+        <form method="post" asp-controller="Account" asp-action="Login" class="login-form"
+              asp-route-returnUrl="@Model.ReturnUrl">
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <input type="email" placeholder="Email" asp-for="Email" required />
+            <span asp-validation-for="Email"></span>
+            
+            <input type="password" placeholder="Пароль" asp-for="Password" required />
+            <span asp-validation-for="Password"></span>
+            
+            <div class="remember-div">
+                <label asp-for="RememberMe"></label>
+                <input type="checkbox" asp-for="RememberMe" />
+            </div>
+            
+            <div class="div-buttons">
+                <button type="submit">
+                    <a>Войти</a>
+                </button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="RememberMe"></label><br />
-        <input asp-for="RememberMe" />
-    </div>
-    <div>
-        <input type="submit" value="Войти" />
-    </div>
-</form>
+</div>
+
